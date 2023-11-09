@@ -54,3 +54,10 @@
 .read-the-docs {
   color: #888;
 }
+
+pre {
+  /*Allig text to the left and reset previous styles*/
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

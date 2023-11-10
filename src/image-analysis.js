@@ -1,38 +1,31 @@
-import { API_KEY } from "./config"
+import OpenAI from "openai"
+
+const openai = new OpenAI({
+  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+  dangerouslyAllowBrowser: true,
+})
 
 const imageAnalysis = async (imageUrl) => {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-4-vision-preview",
-      messages: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "text",
-              text: "What’s in this image?",
+  const response = await openai.chat.completions.create({
+    model: "gpt-4-vision-preview",
+    messages: [
+      {
+        role: "user",
+        content: [
+          { type: "text", text: "What’s in this image?" },
+          {
+            type: "image_url",
+            image_url: {
+              url: imageUrl, // Use the imageUrl parameter
             },
-            {
-              type: "image_url",
-              image_url: {
-                url: imageUrl,
-              },
-            },
-          ],
-        },
-      ],
-      max_tokens: 300,
-    }),
+          },
+        ],
+      },
+    ],
   })
 
-  const data = await response.json()
-  console.log(data)
-  return data.choices[0].message.content
+  console.log(response)
+  return response.choices[0].message.content
 }
 
 export default imageAnalysis

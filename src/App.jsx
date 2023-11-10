@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import "./App.css"
-import { API_KEY } from "./config"
 import imageAnalysis from "./image-analysis"
 
 function App() {
+  //https://imgs.search.brave.com/03DBBbeDubvX-4xtoI-l7qeRyFgiv_Ww-BfenjbxYhE/rs:fit:560:320:1/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9mL2YzL09u/ZV9waWVjZS5wbmcv/NTEycHgtT25lX3Bp/ZWNlLnBuZw
   // https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG
+
   const [imageUrl, setImageUrl] = useState("")
   const [analysisResult, setAnalysisResult] = useState(null)
 

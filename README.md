@@ -1,8 +1,7 @@
-# React + Vite
+# Computer Vision
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Little project from the course.
 
-Currently, two official plugins are available:
+It call the OpenAI api for get a description of a image and for get a image from a text.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://learn.microsoft.com/en-gb/training/modules/challenge-project-add-image-analysis-generation-to-app/?WT.mc_id=cloudskillschallenge_EF5F9F41-0818-4895-9217-79D19827A322
